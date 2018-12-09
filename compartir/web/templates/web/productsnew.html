@@ -1,0 +1,10 @@
+{% extends 'web/body.html' %}
+{% load static %}
+{% block title %}NUEVOS PRODUCTOS PARA LA VENTA Y EL CAMBIO{% endblock %}
+{% block main %}
+    <ul>
+    {% for product in products %}
+      <li> <a href="/producto/{{ product.title }}_{{ product.id }}">{{ product }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

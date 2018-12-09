@@ -1,0 +1,16 @@
+{% extends 'web/body.html' %}
+{% load static %}
+{% block main %}
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <h1>{{ category.title }}</h1>
+          <table>
+            <tr>
+              <th>Descripción</th><td>{{ category.descripcion}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}

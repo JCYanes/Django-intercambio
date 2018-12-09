@@ -1,0 +1,10 @@
+{% extends 'web/body.html' %}
+{% load static %}
+{% block main %}
+  <h3>Bienvenido a las web de venta e intercambio</h3>
+  <ul>
+  {% for category in categorys %}
+    <li> <a href="/categorias/{{ category.title }}_{{ category.id }}">{{ category }}</a></li>
+  {% endfor %}
+  </ul>
+{% endblock %}

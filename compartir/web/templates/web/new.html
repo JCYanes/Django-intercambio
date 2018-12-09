@@ -1,0 +1,16 @@
+{% extends 'web/body.html' %}
+{% load static %}
+{% block main %}
+<h1>{{ new.title }}</h1>
+<table>
+  <tr>
+    <th>Descripción</th><td>{{ new.description}}</td>
+  </tr>
+  <tr>
+    <th>Año de la noticia</th><td>{{ new.year }}</td>
+  </tr>
+  <tr>
+    <th>Autor</th><td>{{ new.author }}</td>
+  </tr>
+</table>
+{% endblock %}
