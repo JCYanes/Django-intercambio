@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4">
-          <img src="{% static 'web/img/logo.png' %}" class="img-fluid">
+          <img src="/static/web/img/{{ product.img }}" class="img-fluid">
         </div>
         <div class="col-12 col-md-4">
           <h1>{{ product.title }}</h1>
@@ -16,12 +16,12 @@
               <th>Año del producto</th><td>{{ product.year }}</td>
             </tr>
             <tr>
-              <th>Estado del producto</th><td>{% if product.new %} Producto nuevo {% else %} Producto de segunda mano {% endif %}}</td>
+              <th>Estado del producto</th><td>{% if product.new %} Producto nuevo {% else %} Producto de segunda mano {% endif %}</td>
             </tr>
           </table>
         </div>
         <div class="col-12 col-md-4">
-          <h1>{{ product.price }}</h1>
+          <h1>Precio del producto: {{ product.price }} €</h1>
           {% if product.barter %} Producto que permite trueque {% else %} Producto que no permite trueque {% endif %}
         </div>
       </div>

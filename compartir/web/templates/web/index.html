@@ -2,9 +2,14 @@
 {% load static %}
 {% block main %}
   <h3>Bienvenido a las web de venta e intercambio</h3>
-  <ul>
   {% for category in categorys %}
-    <li> <a href="/categorias/{{ category.title }}_{{ category.id }}">{{ category }}</a></li>
+<div class="card" style="width: 18rem; display: inline-block">
+  <img class="card-img-top" src="/static/web/img/{{ category.img }}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ category.title }}</h5>
+      <p class="card-text">{{ category.descripcion }}</p>
+      <a href="/nuevos productos/{{ category.id }}" class="btn btn-primary">VER PRODUCTOS</a>
+    </div>
+</div>
   {% endfor %}
-  </ul>
 {% endblock %}

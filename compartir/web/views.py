@@ -12,12 +12,19 @@ def index(request):
     return render(request,'web/index.html',context)
 
 
-def productsnew(request):
-    products = Product.objects.all()
+def productsnew(request, id=None):
+    if id is None:
+        products = Product.objects.all()
+        category = None
+    else:
+        category = Category.objects.get (id=id)
+        products = Product.objects.filter(category=id)
     context =  {
-        'products':products,
+        'products': products,
+        'category': category,
     }
-    return render (request,"web/productsnew.html",context)
+    return render (request, "web/productsnew.html", context)
+
 
 def news(request):
         news = New.objects.all()
@@ -47,8 +54,8 @@ def category(request, title, code):
     return render (request,"web/category.html",context)
 
 def product(request, title, code):
-    product = Product.objects.get (id=code)
+    product = Product.objects.get(id=code)
     context =  {
-        'producto':product,
+        'product':product,
     }
     return render (request,"web/product.html",context)

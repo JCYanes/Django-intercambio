@@ -1,0 +1,9 @@
+.logo img {
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+.header h1{
+  height: 50px;
+  display: inline-block;
+}

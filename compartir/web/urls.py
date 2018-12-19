@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     path('',views.index),
     path('condiciones-de-trueque/', views.conditions),
-    path('categorias/<str:title>_<int:code>', views.category),
+    path('categorias/<str:title>_<int:code>/', views.category),
+    path('nuevos productos/<int:id>/', views.productsnew),
     path('nuevos productos/', views.productsnew),
     path('noticias/', views.news),
     path('noticias/<str:title>_<int:code>', views.new),

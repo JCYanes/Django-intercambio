@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}ULTIMAS NOTICIAS{% endblock %}
 {% block main %}
+  <p> Te mostramos las ultimas noticias</p>
     <ul>
     {% for new in news %}
       <li> <a href="/noticias/{{ new.title }}_{{ new.id }}">{{ new }}</a></li>

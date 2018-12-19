@@ -1,10 +1,17 @@
 {% extends 'web/body.html' %}
 {% load static %}
-{% block title %}NUEVOS PRODUCTOS PARA LA VENTA Y EL CAMBIO{% endblock %}
+{% block title %}PRODUCTOS{% endblock %}
 {% block main %}
-    <ul>
+
+  {% if category is None %}
+    <p> A continuación te mostramos los nuevos productos para venta e intercambio </p>
+  {% else %}
+    <p>Estos son los productos de la categoria {{category.title}}</p>
+  {% endif %}
+
+  <ul>
     {% for product in products %}
       <li> <a href="/producto/{{ product.title }}_{{ product.id }}">{{ product }}</a></li>
     {% endfor %}
-    </ul>
+  </ul>
 {% endblock %}
